@@ -38,11 +38,16 @@ header {
     color: hsl(206, 17%, 28%);
     font-size: 18px;
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 200px;
     padding: 30px 40px;
   }
   
-.content
+/* .content-result */
+
+.hide {
+  display: none;
+}
+
   
   
 
