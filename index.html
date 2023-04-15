@@ -9,37 +9,33 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">Bucket List Quiz</h1>
-    <h2 style="text-align:center;">Smash the Start button</h2>
-    <div class="card">
-        <div class="card-header">
-            <button id="generate" class="btn" onclick="startTimer()">START</button>
-        </div>
-        <div class="card-footer">
-            <span id="timer"></span>
-        </div>
-    </div>
-    <div class="content">
-        <span id="correct-answer" click="function selectedCorrrect()"></span> 
-        <span id="selectedWrong" onclick="function selectedWrong()"></span> 
-    </div>
-   
-
-
-    <!-- Trial & Error formating  -->
-    <!-- <div id="timer">60</div>
-    <div id="gameover"></div> -->
-
-    <!-- <div class="card">
+    <div class="wrapper">
+        <h1 style="text-align:center;">Brooke's Bucket List Quiz</h1>
+        <h2 style="text-align:center;">Smash the Start button</h2>
+        <div class="card">
             <div class="card-header">
                 <button id="generate" class="btn" onclick="startTimer()">START</button>
             </div>
-        <div class="card-body">
-            <textareareadonly id="questionContainer" placeholder="Are Your Ready"aria-label="Generated Password"></textareareadonly>
         </div>
+        <div class="content"></div>
+        <div id ="content-result"></div>
+        
         <div class="card-footer">
             <span id="timer"></span>
-        </div> -->
+        </div>
+    </div>
+   
+    <div class="form-container hide">
+        <h1>How Well Do You Know Brooke's Bucket List?</h1>
+        <form action="" id="bucketlist-form" method="post">
+            <label for="userName">Initials</label>
+            <input type="text" placeholder="initials plz" name="userName-text" id="userName-text">
+            <label for="userScore">Score</label> 
+            <input type="text" placeholder="what you know bout it" name="userScore-text" id="userScore-list">
+        </form>
+    </div>
+
+   
 
 
     <script src="script.js"></script>
