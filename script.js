@@ -57,30 +57,42 @@ function gradeUserSelection(event){
 }
 
 function selectedCorrect() {
+    contentResultDiv = document.getElementById("content-result");
+    contentResultDiv.innerText="";
     displayResult("Correct!")
     console.log('Correct answer selected');  
-    // const contentResultDiv = document.getElementById("content-result")
-    // const contentResultString = "Correct!"
-    // // if (displayResult = selectedCorrect) {
-    //     setTimeout(function(){
-    //         contentResultDiv.innerText = "";
-    //     }, 5 + currentIndex++); 
+   
+    const contentResultString = "Correct!"
+    // if (displayResult = selectedCorrect) {
+        setTimeout(function(){
+            contentResultDiv.innerText = "";
+        }, 900); 
     // }
     // add points and stuff
     // ...
     // proceed to the next question, afterhaving incremented the currIndex value
     currentIndex++;
-    createAndDisplayQuestionAndChoices();
     // for(let i = 0; i < questionsArray.length; i++) {
-    // if (currentIndex === questionsArray.length) {
-    //     endQuiz()
-    // }
+    console.log(currentIndex)
+    if (currentIndex === questionsArray.length) {
+        endQuiz()
+    }
+    else { 
+        createAndDisplayQuestionAndChoices();
+    }
     // // }
 }
 
 function selectedWrong() {
-    displayResult("WRONG!")
+    const contentResultDiv = document.getElementById("content-result");
+    contentResultDiv.innerText="";
+    displayResult("WRONG!");
     console.log('Selected wrong answer');
+   
+    const contentResultString = "WRONG!"
+    setTimeout(function(){
+        contentResultDiv.innerText = "";
+    }, 900); 
     // subtract time and stuff
     // ...
     // proceed to next question
@@ -88,12 +100,16 @@ function selectedWrong() {
     //update the countdown display
     document.getElementById("timer").textContent = timeLeft
     currentIndex++;
-    createAndDisplayQuestionAndChoices();
+   
     //forloop on questionsArray
     // for(let i = 0; i < questionsArray.length; i++) {
-    // if (currentIndex === questionsArray.length) {
-    //     endQuiz()
-    // }
+    console.log(currentIndex)
+    if (currentIndex === questionsArray.length) {
+        endQuiz()   
+    }
+    else { 
+        createAndDisplayQuestionAndChoices();
+    }
     // // }
 }
 
@@ -157,12 +173,33 @@ function wrongAnswer() {
     }
 }
 
+var bucketlistForm = document.querySelector("#bucketlist-form")
+bucketlistForm.addEventListener("submit", function(event){
+    event.preventDefault ()
+    console.log("hello")
+    var initials = document.querySelector("#userName").value
+    console.log(initials)
+    var score = document.querySelector("#userScore").value
+    console.log(score)
+    var storage = JSON.parse(localStorage.getItem("highScores"))||[]
+    storage.push({initials, score})
+    localStorage.setItem("highScores", JSON.stringify(storage))
+
+//display highscores
+var storage = JSON.parse(localStorage.getItem("highScores"))||[]
+//forloop //create element & append to html & add storage [i] as text-content
+//before forloop highScoreEl.innerHTML=""
+})
+
+
+
 // Local storage 
 // localStorage.setItem("Correct!", "WRONG!")
 // localStorage.getItem("Correct!", "WRONG!")
 
 
 
+//"Submit" Button for local storage
 
 
 
